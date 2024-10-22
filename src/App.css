@@ -1,0 +1,65 @@
+* {
+  box-sizing: border-box; /* corrigido para box-sizing */
+  padding: 0;
+  margin: 0;
+}
+
+main {
+  background-image: url(./Assets/wallpaperGameNews.jpg);
+  background-size: cover;
+  height: 92vh;
+}
+
+.containertitle {
+  padding: 80px;
+  width: 500px;
+  height: 100px;
+  text-align: center;
+  position: absolute;
+  top: 30%;
+}
+
+.titlegamer {
+  font-family: fantasy;
+  font-size: 60px;
+  letter-spacing: 10px;
+  color: rgb(0, 0, 0);
+  background: rgba(255, 255, 255, 0.137);
+  border-radius: 15px;
+}
+
+.subtitle {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: white;
+  text-align: justify;
+}
+
+/* Adicionando responsividade para dispositivos móveis */
+@media (max-width: 768px) {
+  .containertitle {
+    padding: 40px; /* Reduzindo padding */
+    width: 100%; /* Ajustando a largura para ocupar mais espaço da tela */
+    top: 25%; /* Ajustando a posição */
+  }
+
+  .titlegamer {
+    font-size: 40px; /* Diminuindo o tamanho da fonte */
+    letter-spacing: 5px; /* Reduzindo o espaçamento das letras */
+  }
+}
+
+@media (max-width: 480px) {
+  .containertitle {
+    padding: 20px;
+    top: 20%;
+  }
+
+  .titlegamer {
+    font-size: 30px; /* Menor tamanho para telas muito pequenas */
+    letter-spacing: 3px;
+  }
+
+  main {
+    height: 100vh; /* Garantindo que ocupe a altura total em telas muito pequenas */
+  }
+}
