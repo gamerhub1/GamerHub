@@ -1,7 +1,11 @@
-.Main{
+.Main {
+    margin: 0;
+    padding: 0;
     background: linear-gradient(180deg, black 0%, rgb(185, 0, 0) 50%, black 110%);
-    height: 2080px;
+    height: 100vh;
+    overflow: auto; 
 }
+
 .search-container {
     display: flex;
     justify-content: center;
@@ -13,6 +17,7 @@
 }
 
 .search-bar {
+    margin-top: 45px;
     width: 300px;
     padding: 10px;
     border: none;
@@ -28,6 +33,7 @@
 }
 
 .search-btn {
+    margin-top: 45px;
     padding: 10px 20px;
     border: none;
     background-color: #ff0000;
@@ -43,21 +49,37 @@
     background-color: #ff3333;
 }
 
-.destaque{
-    position: absolute;
-    top: 525px;
-    left: 290px;
-    font-family: sans-serif;
-    color: white;
-    
+.genrelist {
+    display: flex;
+    flex-direction: column;
 }
 
-.jogos{
-    position: absolute;
-    top: 855px;
-    left: 290px;
+.banner {
+        margin-left: 270px;
+        width:calc(100% - 270px);
+        padding: 20px;
+ 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: -1380px;
+}
+.jogosdestaques{
     font-family: sans-serif;
-    color: white;
-    
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    margin-left: 270px;
+}
 
+.gamelist{
+    font-family: sans-serif;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    margin-left: 270px;
+}
+
+h1{
+    color: white;
 }

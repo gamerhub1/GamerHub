@@ -1,4 +1,4 @@
-.containerlist{
+.containerlist {
     background: linear-gradient(0deg, rgb(27, 27, 27) 0%, rgb(0, 0, 0) 100%);
     display: flex;
     flex-direction: column;
@@ -6,6 +6,7 @@
     box-shadow: 1px 1px 50px 1px;
     border-radius: 5px;
 }
+    
 .h2genre {
     color: white;
     font-size: 35px;
@@ -42,7 +43,22 @@
     background-color:  rgb(65, 65, 65);
 }
 
-.namegenre:active{
+.iconlist {
+    display: flex;
+    align-items: center;
+    margin-bottom: 14px;
+    cursor: pointer;
+    padding: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .iconlist:hover {
     background-color: rgb(65, 65, 65);
-}
-
+  }
+  
+  
+  .iconlist.active {
+    background-color: rgb(65, 65, 65);
+    color: white; 
+  }
+  

@@ -2,38 +2,38 @@ import React, { useEffect, useState } from "react";
 import GlobalAPI from "../Services/GlobalAPI";
 import "../Css/Generos.css";
 
-function GenreList({genereId,selectedGenresName}) {
-    
+function GenreList({ genereId, selectedGenresName }) {
+  const [genreList, setGenreList] = useState([]);
+  const [activeIndex, setActiveIndex] = useState(null); 
 
-    const [genreList,setGenreList]=useState([])
-    const [activeIndex,setActiveIndex]=useState(0)
-    useEffect(()=> {
-        getGenreList();
+  useEffect(() => {
+    getGenreList();
+  }, []);
 
-    }, [])
-    const getGenreList=()=>{
-        GlobalAPI.getGenreList.then((resp)=>{
-            console.log(resp.data.results);
-            setGenreList(resp.data.results);
-        })
-    }
-    return (
-        <div className="containerlist">
-            <h2 className="h2genre">Gêneros</h2>
-            {genreList.map((item,index)=>
-                <div className="iconlist">
-                    <img className="icongenre" src={item.image_background}/>
-                    <h3
-                    onClick={()=>{setActiveIndex(index);genereId(item.id); selectedGenresName 
-                        selectedGenresName(item.name)}} className={`namegenre ${activeIndex==index?"":null}`}>{item.name}</h3>
+  const getGenreList = () => {
+    GlobalAPI.getGenreList.then((resp) => {
+      setGenreList(resp.data.results);
+    });
+  };
 
-                </div>  
-                        
-        
-     )}
+  return (
+    <div className="containerlist">
+      <h2 className="h2genre">Gêneros</h2>
+      {genreList.map((item, index) => (
+        <div
+          key={item.id}
+          className={`iconlist ${activeIndex === index ? "active" : ""}`} 
+          onClick={() => {
+            setActiveIndex(index); 
+            selectedGenresName(item.name);
+          }}
+        >
+          <img className="icongenre" src={item.image_background} alt={item.name} />
+          <h3 className="namegenre">{item.name}</h3>
         </div>
-    
-)
+      ))}
+    </div>
+  );
 }
 
-export default GenreList
+export default GenreList;

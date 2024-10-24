@@ -1,5 +1,5 @@
 * {
-  box-sizing: border-box; /* corrigido para box-sizing */
+  box-sizing: border-box; 
   padding: 0;
   margin: 0;
 }
@@ -7,7 +7,8 @@
 main {
   background-image: url(./Assets/wallpaperGameNews.jpg);
   background-size: cover;
-  height: 92vh;
+  background-position: center; 
+  height: 100vh; 
 }
 
 .containertitle {
@@ -34,17 +35,16 @@ main {
   text-align: justify;
 }
 
-/* Adicionando responsividade para dispositivos móveis */
 @media (max-width: 768px) {
   .containertitle {
-    padding: 40px; /* Reduzindo padding */
-    width: 100%; /* Ajustando a largura para ocupar mais espaço da tela */
-    top: 25%; /* Ajustando a posição */
+    padding: 40px; 
+    width: 100%; 
+    top: 25%; 
   }
 
   .titlegamer {
-    font-size: 40px; /* Diminuindo o tamanho da fonte */
-    letter-spacing: 5px; /* Reduzindo o espaçamento das letras */
+    font-size: 40px; 
+    letter-spacing: 5px; 
   }
 }
 
@@ -55,11 +55,11 @@ main {
   }
 
   .titlegamer {
-    font-size: 30px; /* Menor tamanho para telas muito pequenas */
+    font-size: 30px;
     letter-spacing: 3px;
   }
 
   main {
-    height: 100vh; /* Garantindo que ocupe a altura total em telas muito pequenas */
+    height: 100vh; 
   }
 }

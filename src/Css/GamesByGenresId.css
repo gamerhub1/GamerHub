@@ -1,101 +1,106 @@
-.gencardgame{
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px; 
-    padding: 0px;
-    top: 900px;
-    left: 290px;
-    position: absolute;
-    
+.gencardgame {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; 
+  margin: 20px; 
 }
 
-.gencard{
-    background-color: black;
-    border-radius: 8px;
-    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    width: 250px;
-    height: 260px;
-    transition: transform 0.2s;
-    color: white;
-    font-family: sans-serif;
-    cursor: pointer;
-}
-.gengame-image{
-    width: 100%;
-    height: 70%;
+.gencard {
+  background-color: #000000; 
+  border-radius: 12px; 
+  overflow: hidden; 
+  transition: transform 0.3s ease, box-shadow 0.3s ease; 
+  width: calc(25% - 20px); 
+  margin: 10px; 
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7); 
+  position: relative; 
+  padding: 10px; 
 }
 
 .gencard:hover {
-    transform: scale(1.02);
+  transform: scale(1.05); 
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.9); 
+}
+
+.gengame-image {
+  width: 100%; 
+  height: 150px;
+  object-fit: cover; 
+  border-radius: 12px; 
+}
+
+.gengame-info {
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
+  text-align: center; 
+  margin-top: 10px; 
 }
 
 .gengame-title {
-    font-size: 0.9em;
-    margin: 10px;
-    text-align: center;
-    object-fit: cover;
+  font-size: 20px; 
+  margin: 5px 0; 
+  color: #ffffff; 
 }
 
-#genmetacritic{
-    color: rgb(255, 255, 255);
-    display: inline-block;
-    width: 20px;
-    height: auto;
-    border-radius: 2px;
-    font-size:small;
-    margin-top: 1px;
-    background-color: rgb(255, 0, 0);
+#genmetacritic {
+  font-weight: bold;
+  background-color: #ff0000;
+  border-radius: 4px;
 }
 
-.genrating{
-    font-size: 0.9em;
-    margin-left: 10px;   
+.genrating {
+  font-size: 16px; 
+  color: #ffffff; 
 }
+
+
+@media (max-width: 1200px) {
+  .gencard {
+      width: calc(33.33% - 20px); 
+  }
+}
+
+@media (max-width: 800px) {
+  .gencard {
+      width: calc(50% - 20px); 
+  }
+}
+
+@media (max-width: 500px) {
+  .gencard {
+      width: 100%; 
+  }
+}
+
 
 .custom-pagination {
-    display: flex;
-    justify-content: center;
-    position: absolute;
-    align-items: center;
-    top: 1090px;
-    right: 670px;
-  }
-  
-  .custom-pagination button {
-    background-color: black;
-    color: white;
-    border: none;
-    padding: 11px 20px;
-    margin: 0 10px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    font-family: sans-serif;
-  }
-  
-  .custom-pagination button:hover {
-    background-color: red;
-  }
-  
-  .custom-pagination button:disabled {
-    background-color: gray;
-    cursor: not-allowed;
-  }
-  
-  .custom-pagination .paginationnames {
-    color: white;
-    font-family: Sans-serif;
-    font-size: 16px;
-    margin: 0 15px;
-    white-space: nowrap;
-  }
-  
-  
+  display: flex; 
+  justify-content: center; 
+  margin-top: 23px; 
+}
 
-@media (max-width: 700px) {
-    .gencard {
-        width: 100%;
-        object-fit: cover;
-        
-    }
+.custom-pagination button {
+  background-color: #1a1a1a; 
+  color: rgb(255, 255, 255); 
+  border: none; 
+  border-radius: 4px; 
+  padding: 10px 15px; 
+  margin: 0 10px; 
+  cursor: pointer; 
+  transition: background-color 0.3s; 
+  margin-top: -8px;
+}
+
+.custom-pagination button:hover {
+  background-color: #ff0000; 
+}
+
+.custom-pagination button:disabled {
+  background-color: #555; 
+  cursor: not-allowed; 
+}
+
+.paginationnames{
+  color: white;
 }

@@ -11,7 +11,7 @@ a {
 }
 
 a:hover {
-  color: red; /* Muda para vermelho ao passar o mouse */
+  color: red; 
 }
 
 nav {
@@ -20,13 +20,17 @@ nav {
   align-items: center;
   font-family: 'Segoe UI', Roboto, sans-serif;
   background: rgb(0, 0, 0);
-  height: 8vh;
+  height: 8vh; 
   padding: 0 20px;
-  position: relative;
-  z-index: 10;
+  position: fixed;
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  z-index: 10; 
 }
 
-.logo a { /* Estilo da logo clicável */
+
+.logo a { 
   font-size: 24px;
   color: white;
   text-transform: uppercase;
@@ -35,7 +39,7 @@ nav {
   transition: 0.3s;
 }
 
-.logo a:hover { /* Muda para vermelho ao passar o mouse na logo */
+.logo a:hover { 
   color: red;
 }
 
@@ -50,29 +54,29 @@ nav {
 }
 
 .nav-list li a {
-  color: white; /* Define a cor padrão para os itens do menu */
-  transition: 0.3s; /* Transição suave para os itens do menu */
+  color: white; 
+  transition: 0.3s; 
 }
 
 .nav-list li a:hover {
-  color: red; /* Muda para vermelho ao passar o mouse nos itens do menu */
+  color: red; 
 }
 
-/* Responsividade para dispositivos móveis */
+
 @media (max-width: 768px) {
   .nav-list {
-    position: fixed; /* Torna o menu fixo, sobrepondo todo o conteúdo */
-    top: 8vh; /* Coloca o menu logo abaixo do cabeçalho */
+    position: fixed; 
+    top: 8vh; 
     left: 0;
     width: 100%;
-    height: 100%; /* Preenche a tela inteira */
+    height: 100%; 
     background-color: black;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    display: none; /* Escondido por padrão */
-    padding: 20px 0; /* Adiciona algum espaçamento interno */
-    z-index: 100; /* Garante que o menu ficará sobre outros elementos */
+    display: none; 
+    padding: 20px 0; 
+    z-index: 100; 
   }
 
   .nav-list li {
@@ -85,21 +89,21 @@ nav {
     cursor: pointer;
     font-size: 28px;
     color: white;
-    z-index: 101; /* Garante que o ícone de hambúrguer também estará sobreposto */
-    transition: color 0.3s; /* Transição suave da cor */
+    z-index: 101; 
+    transition: color 0.3s; 
   }
 
   .hamburger:hover {
-    color: red; /* Muda para vermelho ao passar o mouse no ícone hambúrguer */
+    color: red; 
   }
 
   .nav-active {
-    display: flex; /* Exibe o menu ao ativar */
+    display: flex; 
     flex-direction: column;
   }
 }
 
-/* Oculta o menu "hamburger" em telas maiores */
+
 @media (min-width: 769px) {
   .hamburger {
     display: none;
