@@ -17,8 +17,8 @@
 }
 
 .search-bar {
-    margin-top: 45px;
-    width: 300px;
+    margin-top: 50px;
+    width: 280px;
     padding: 10px;
     border: none;
     border-radius: 4px 0 0 4px;
@@ -33,7 +33,7 @@
 }
 
 .search-btn {
-    margin-top: 45px;
+    margin-top: 50px;
     padding: 10px 20px;
     border: none;
     background-color: #ff0000;
@@ -84,4 +84,13 @@ h1{
     color: white;
     font-family: sans-serif;
     margin-left: 300px;
+}
+
+.searchg{
+    font-family: sans-serif;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    margin-left: 210px;
+    margin-top: -1350px;
 }

@@ -5,14 +5,15 @@ import GlobalAPI from "../Services/GlobalAPI";
 import Banner from "../Components/Banner";
 import JogosDestaques from "../Components/JogosDestaques";
 import GamesByGenresId from "../Components/GamesByGenresId";
+import GamesSearch from "../Components/GamesSearch"; // Importando o novo componente
 
 const Catalogo = () => {
   const [allGameList, setAllGameList] = useState([]);
   const [gameListByGenres, setGameListByGenres] = useState([]);
-  const [searchResults, setSearchResults] = useState([]); 
-  const [selectedGenresName, setSelectedGenresName] = useState('Action');
-  const [genreId, setGenreId] = useState(4); 
-  const [searchQuery, setSearchQuery] = useState(''); 
+  const [searchResults, setSearchResults] = useState([]);
+  const [selectedGenresName, setSelectedGenresName] = useState("Action");
+  const [genreId, setGenreId] = useState(4);
+  const [searchQuery, setSearchQuery] = useState("");
 
   const gameListCache = useRef({});
 
@@ -33,22 +34,21 @@ const Catalogo = () => {
 
     try {
       const resp = await GlobalAPI.getGameListByGenreId(id, 1);
-      gameListCache.current[id] = resp.data.results; 
+      gameListCache.current[id] = resp.data.results;
       setGameListByGenres(resp.data.results);
     } catch (error) {
       console.error("Error fetching games by genre:", error);
     }
   }, []);
 
-  
   const searchGames = async () => {
-    if (searchQuery.trim() === '') {
+    if (searchQuery.trim() === "") {
       setSearchResults([]);
       return;
     }
 
     try {
-      const resp = await GlobalAPI.getGameListBySearch(searchQuery); 
+      const resp = await GlobalAPI.searchGames(searchQuery);
       setSearchResults(resp.data.results);
     } catch (error) {
       console.error("Error searching for games:", error);
@@ -56,35 +56,39 @@ const Catalogo = () => {
   };
 
   useEffect(() => {
-    getAllGamesList(); 
+    getAllGamesList();
   }, [getAllGamesList]);
 
   useEffect(() => {
-    getGameListByGenresId(genreId); 
+    getGameListByGenresId(genreId);
   }, [genreId, getGameListByGenresId]);
 
   return (
     <div className='Main'>
       <div className="search-container">
-        <input 
-          type="text" 
-          className="search-bar" 
-          placeholder="Pesquisar..." 
+        <input
+          type="text"
+          className="search-bar"
+          placeholder="Pesquisar..."
           value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)} 
+          onChange={(e) => setSearchQuery(e.target.value)}
         />
-        <button className="search-btn" onClick={searchGames}>Pesquisar</button> 
+        <button className="search-btn" onClick={searchGames}>
+          Pesquisar
+        </button>
       </div>
       <div className="genrelist">
         <GenreList
-          genereId={(genereId) => {
-            setGenreId(genereId); 
-          }}
+          genereId={(genereId) => setGenreId(genereId)}
           selectedGenresName={(name) => setSelectedGenresName(name)}
         />
       </div>
-      {allGameList.length > 0 && (searchResults.length > 0 || gameListByGenres.length > 0) ? (
-        <div>
+      
+      {searchResults.length > 0 ? (
+        <div className="searchg"><GamesSearch games={searchResults} /></div> 
+      
+      ) : (
+        <>
           <div className="banner">
             <Banner gameBanner={allGameList[0]} />
           </div>
@@ -94,16 +98,10 @@ const Catalogo = () => {
           </div>
           <h1>🎮 Jogos</h1>
           <div className="gamelist">
-            {searchResults.length > 0 ? (
-              searchResults.map((game) => (
-                <GamesByGenresId key={game.id} genreId={game.genreId} selectedGenresName={selectedGenresName} />
-              ))
-            ) : (
-              <GamesByGenresId genreId={genreId} selectedGenresName={selectedGenresName} />
-            )}
+            <GamesByGenresId genreId={genreId} selectedGenresName={selectedGenresName} />
           </div>
-        </div>
-      ) : null}
+        </>
+      )}
     </div>
   );
 };

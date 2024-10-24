@@ -22,11 +22,13 @@ main {
 
 .titlegamer {
   font-family: fantasy;
-  font-size: 60px;
-  letter-spacing: 10px;
+  font-size: 65px;
+  letter-spacing: 12px;
   color: rgb(0, 0, 0);
   background: rgba(255, 255, 255, 0.137);
+  margin-top: -60px;
   border-radius: 15px;
+  margin-left: 0px; 
 }
 
 .subtitle {
@@ -43,8 +45,9 @@ main {
   }
 
   .titlegamer {
-    font-size: 40px; 
+    font-size: 50px; 
     letter-spacing: 5px; 
+    margin-left: 5px;
   }
 }
 
