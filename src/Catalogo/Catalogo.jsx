@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback, useRef } from "react"; // Adicione useRef aqui
+import React, { useState, useEffect, useCallback, useRef } from "react";
 import "../Catalogo/Catalogo.css";
 import GenreList from "../Components/GenreList";
 import GlobalAPI from "../Services/GlobalAPI";
@@ -9,10 +9,11 @@ import GamesByGenresId from "../Components/GamesByGenresId";
 const Catalogo = () => {
   const [allGameList, setAllGameList] = useState([]);
   const [gameListByGenres, setGameListByGenres] = useState([]);
+  const [searchResults, setSearchResults] = useState([]); 
   const [selectedGenresName, setSelectedGenresName] = useState('Action');
   const [genreId, setGenreId] = useState(4); 
+  const [searchQuery, setSearchQuery] = useState(''); 
 
-  // Cache para armazenar listas de jogos por gênero
   const gameListCache = useRef({});
 
   const getAllGamesList = useCallback(async () => {
@@ -25,7 +26,6 @@ const Catalogo = () => {
   }, []);
 
   const getGameListByGenresId = useCallback(async (id) => {
-    // Verifica se já temos os jogos armazenados em cache
     if (gameListCache.current[id]) {
       setGameListByGenres(gameListCache.current[id]);
       return;
@@ -33,49 +33,74 @@ const Catalogo = () => {
 
     try {
       const resp = await GlobalAPI.getGameListByGenreId(id, 1);
-      gameListCache.current[id] = resp.data.results; // Armazena em cache
+      gameListCache.current[id] = resp.data.results; 
       setGameListByGenres(resp.data.results);
     } catch (error) {
       console.error("Error fetching games by genre:", error);
     }
   }, []);
 
+  
+  const searchGames = async () => {
+    if (searchQuery.trim() === '') {
+      setSearchResults([]);
+      return;
+    }
+
+    try {
+      const resp = await GlobalAPI.getGameListBySearch(searchQuery); 
+      setSearchResults(resp.data.results);
+    } catch (error) {
+      console.error("Error searching for games:", error);
+    }
+  };
+
   useEffect(() => {
-    getAllGamesList(); // Busca todos os jogos uma vez
+    getAllGamesList(); 
   }, [getAllGamesList]);
 
   useEffect(() => {
-    getGameListByGenresId(genreId); // Busca jogos por gênero quando genreId muda
+    getGameListByGenresId(genreId); 
   }, [genreId, getGameListByGenresId]);
 
   return (
     <div className='Main'>
       <div className="search-container">
-        <input type="text" className="search-bar" placeholder="Pesquisar..." />
-        <button className="search-btn">Pesquisar</button>
+        <input 
+          type="text" 
+          className="search-bar" 
+          placeholder="Pesquisar..." 
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)} 
+        />
+        <button className="search-btn" onClick={searchGames}>Pesquisar</button> 
       </div>
       <div className="genrelist">
         <GenreList
           genereId={(genereId) => {
-            setGenreId(genereId); // Atualiza o genreId
+            setGenreId(genereId); 
           }}
           selectedGenresName={(name) => setSelectedGenresName(name)}
         />
       </div>
-      {allGameList.length > 0 && gameListByGenres.length > 0 ? (
+      {allGameList.length > 0 && (searchResults.length > 0 || gameListByGenres.length > 0) ? (
         <div>
           <div className="banner">
             <Banner gameBanner={allGameList[0]} />
           </div>
+          <h1>🔥 Destaques</h1>
           <div className="jogosdestaques">
             <JogosDestaques gameList={allGameList} />
           </div>
-          <h1>12</h1>
+          <h1>🎮 Jogos</h1>
           <div className="gamelist">
-            <GamesByGenresId
-              genreId={genreId}
-              selectedGenresName={selectedGenresName}
-            />
+            {searchResults.length > 0 ? (
+              searchResults.map((game) => (
+                <GamesByGenresId key={game.id} genreId={game.genreId} selectedGenresName={selectedGenresName} />
+              ))
+            ) : (
+              <GamesByGenresId genreId={genreId} selectedGenresName={selectedGenresName} />
+            )}
           </div>
         </div>
       ) : null}

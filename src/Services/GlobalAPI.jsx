@@ -9,8 +9,12 @@ const getGenreList=axiosCreate.get('/genres?key='+key);
 const getAllGames=axiosCreate.get('/games?key='+key);
 const getGameListByGenreId = (id, page) => 
     axiosCreate.get(`/games?key=${key}&genres=${id}&page=${page}`);
+const searchGamesByQuery = (query) => 
+    axiosCreate.get(`/games?key=${key}&page_size=10&search=${query}`);
+
 export default{
     getGenreList,
     getAllGames,
-    getGameListByGenreId
+    getGameListByGenreId,
+    searchGamesByQuery
 }
