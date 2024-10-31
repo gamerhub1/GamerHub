@@ -1,9 +1,8 @@
-/* Estilos para os cards */
 .games-search-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    gap: 5px;
+    gap: 10px;
   }
   
   .games-search-card {
@@ -42,7 +41,7 @@
     color: #ffffff;
   }
   
-  /* Estilos para os botões de paginação */
+ 
   .pagination-buttons {
     display: flex;
     justify-content: center;
@@ -51,7 +50,7 @@
   }
   
   .pagination-buttons button {
-    background-color: #007bff; /* Cor do botão */
+    background-color: #007bff; 
     color: white;
     border: none;
     padding: 10px 20px;
@@ -62,16 +61,60 @@
   }
   
   .pagination-buttons button:hover {
-    background-color: #0056b3; /* Cor ao passar o mouse */
+    background-color: #0056b3; 
   }
   
   .pagination-buttons button:disabled {
-    background-color: #cccccc; /* Cor quando desabilitado */
+    background-color: #cccccc; 
     cursor: not-allowed;
   }
   
   .pagination-buttons span {
     font-size: 1.1em;
     color: #333;
+  }
+  
+ 
+  @media (max-width: 768px) {
+    .games-search-card {
+      width: 160px;
+      height: 220px;
+    }
+  
+    .games-search-title {
+      font-size: 1.1em;
+    }
+  
+    .games-search-image {
+      height: 100px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .games-search-container {
+      justify-content: center;
+    }
+  
+    .games-search-card {
+      width: 140px;
+      height: 200px;
+    }
+  
+    .games-search-title {
+      font-size: 1em;
+    }
+  
+    .games-search-image {
+      height: 90px;
+    }
+  
+    .pagination-buttons button {
+      padding: 8px 16px;
+      margin: 0 5px;
+    }
+  
+    .pagination-buttons span {
+      font-size: 1em;
+    }
   }
   

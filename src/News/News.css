@@ -1,0 +1,97 @@
+.MainNews {
+    background: linear-gradient(180deg, black 0%, rgb(185, 0, 0) 50%, black 110%);
+    color: white;
+    padding: 50px;
+    min-height: 100vh;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    margin-top: 25px;
+}
+
+.h1News {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #ffffff;
+}
+
+.ulNews {
+    list-style-type: none;
+    padding: 0;
+}
+
+.liNews {
+    margin-bottom: 20px;
+    background-color: rgb(0, 0, 0);
+    padding: 15px;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+}
+
+.liNews:hover {
+    background-color: rgb(54, 54, 54);
+}
+
+.h2News {
+    font-size: 1.5rem;
+    margin: 0 0 10px;
+    color: #ffffff;
+}
+
+.pNews {
+    margin: 0 0 10px;
+    color: #ffffff;
+}
+
+.aNews {
+    color: #ff0000;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.aNews:hover {
+    text-decoration: underline;
+    color: #ff4d4d;
+}
+
+.paginationNews {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.paginationNews button {
+    background-color: #ff0000;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin: 0 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.paginationNews button:hover {
+    background-color: #ff3333;
+}
+
+.paginationNews button:disabled {
+    background-color: gray;
+    cursor: not-allowed;
+}
+
+.paginationNews span {
+    align-self: center;
+    color: white;
+    margin: 0 10px;
+}
+
+.news-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+
+

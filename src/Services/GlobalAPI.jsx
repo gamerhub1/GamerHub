@@ -5,7 +5,7 @@ const axiosCreate = axios.create({
   baseURL: 'https://api.rawg.io/api',
 });
 
-// Funções da API
+
 const getGenreList = axiosCreate.get('/genres?key=' + key);
 const getAllGames = axiosCreate.get('/games?key=' + key);
 const getGameListByGenreId = (id, page) =>
@@ -17,5 +17,5 @@ export default {
   getGenreList,
   getAllGames,
   getGameListByGenreId,
-  searchGames,  // Função de busca adicionada
+  searchGames,
 };

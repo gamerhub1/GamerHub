@@ -5,7 +5,7 @@ import GlobalAPI from "../Services/GlobalAPI";
 import Banner from "../Components/Banner";
 import JogosDestaques from "../Components/JogosDestaques";
 import GamesByGenresId from "../Components/GamesByGenresId";
-import GamesSearch from "../Components/GamesSearch"; // Importando o novo componente
+import GamesSearch from "../Components/GamesSearch"; 
 
 const Catalogo = () => {
   const [allGameList, setAllGameList] = useState([]);

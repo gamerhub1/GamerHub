@@ -2,7 +2,6 @@ import React from "react";
 import "../Css/Banner.css";
 
 function Banner({ gameBanner }) {
-  // Verifica se gameBanner está definido
   if (!gameBanner || !gameBanner.name || !gameBanner.background_image) {
     return <div className="banner-placeholder">No banner available</div>;
   }
