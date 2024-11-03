@@ -6,7 +6,7 @@ const axiosNewsInstance = axios.create({
 });
 
 
-const fetchNews = (query = "video games") => 
+const fetchNews = (query = "games") => 
   axiosNewsInstance.get(`/everything?q=${query}&sortBy=publishedAt&apiKey=${key}`);
 
 export default {

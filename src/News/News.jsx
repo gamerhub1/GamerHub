@@ -2,16 +2,15 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './News.css';
 
-
-
 const News = () => {
   const [news, setNews] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const newsPerPage = 10;
+  const [searchTerm, setSearchTerm] = useState(""); 
+  const newsPerPage = 6;
 
-  const fetchNews = async () => {
+  const fetchNews = async (query) => {
     try {
-      const response = await axios.get(`https://newsapi.org/v2/everything?q=games&language=pt&apiKey=f2d374e5416d45ec82f5454d25f4d37c`);
+      const response = await axios.get(`http://newsapi.org/v2/everything?q=${query || "game"}&language=pt&apiKey=f2d374e5416d45ec82f5454d25f4d37c`);
       setNews(response.data.articles);
     } catch (error) {
       console.error("Erro ao buscar notícias:", error);
@@ -19,8 +18,8 @@ const News = () => {
   };
 
   useEffect(() => {
-    fetchNews();
-  }, []);
+    fetchNews(searchTerm);
+  }, [searchTerm]);
 
   const indexOfLastNews = currentPage * newsPerPage;
   const indexOfFirstNews = indexOfLastNews - newsPerPage;
@@ -39,8 +38,21 @@ const News = () => {
     }
   };
 
+  const handleSearchChange = (event) => {
+    setSearchTerm(event.target.value);
+    setCurrentPage(1);
+  };
+
   return (
     <div className='MainNews'>
+      <input
+        type="text"
+        placeholder="Pesquise um Jogo ou Empresa..."
+        value={searchTerm}
+        onChange={handleSearchChange}
+        className="search-barNews"
+      />
+
       {currentNews.length === 0 ? (
         <p className='pNews'>Nenhuma notícia encontrada.</p>
       ) : (
@@ -55,6 +67,7 @@ const News = () => {
           ))}
         </ul>
       )}
+
       <div className="paginationNews">
         <button onClick={handlePrevPage} disabled={currentPage === 1}>Anterior</button>
         <span>{`Página ${currentPage} de ${totalPages}`}</span>
