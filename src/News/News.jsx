@@ -10,7 +10,7 @@ const News = () => {
 
   const fetchNews = async (query) => {
     try {
-      const response = await axios.get(`http://newsapi.org/v2/everything?q=${query || "game"}&language=pt&apiKey=f2d374e5416d45ec82f5454d25f4d37c`);
+      const response = await axios.get(`https://newsapi.org/v2/everything?q=${query || "game"}&language=pt&apiKey=f2d374e5416d45ec82f5454d25f4d37c`);
       setNews(response.data.articles);
     } catch (error) {
       console.error("Erro ao buscar notícias:", error);
