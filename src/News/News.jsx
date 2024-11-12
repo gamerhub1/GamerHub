@@ -5,15 +5,19 @@ import './News.css';
 const News = () => {
   const [news, setNews] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [searchTerm, setSearchTerm] = useState(""); 
+  const [searchTerm, setSearchTerm] = useState("");
   const newsPerPage = 6;
 
   const fetchNews = async (query) => {
     try {
-      const response = await axios.get(`https://newsapi.org/v2/everything?q=${query || "game"}&language=pt&apiKey=f2d374e5416d45ec82f5454d25f4d37c`);
-      setNews(response.data.articles);
+      
+      const response = await axios.get(`/api/news?q=${query || "games"}&lang=pt&sortBy=publishedAt`);
+      
+      const articles = response.data.articles || [];
+      setNews(articles);
     } catch (error) {
       console.error("Erro ao buscar notícias:", error);
+      setNews([]); 
     }
   };
 
@@ -23,7 +27,7 @@ const News = () => {
 
   const indexOfLastNews = currentPage * newsPerPage;
   const indexOfFirstNews = indexOfLastNews - newsPerPage;
-  const currentNews = news.slice(indexOfFirstNews, indexOfLastNews);
+  const currentNews = news.slice(indexOfFirstNews, indexOfLastNews); 
   const totalPages = Math.ceil(news.length / newsPerPage);
 
   const handleNextPage = () => {
