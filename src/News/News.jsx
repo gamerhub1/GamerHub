@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import api from '../Services/GlobalAPINews'; 
 import './News.css';
 
 const News = () => {
@@ -8,19 +8,22 @@ const News = () => {
   const [searchTerm, setSearchTerm] = useState(""); 
   const newsPerPage = 6;
 
+
   const fetchNews = async (query) => {
     try {
-      const response = await axios.get(`https://newsapi.org/v2/everything?q=${query || "game"}&language=pt&apiKey=f2d374e5416d45ec82f5454d25f4d37c`);
+      const response = await api.fetchNews(query);  
       setNews(response.data.articles);
     } catch (error) {
       console.error("Erro ao buscar notícias:", error);
     }
   };
 
+
   useEffect(() => {
-    fetchNews(searchTerm);
+    fetchNews(searchTerm || "games");  
   }, [searchTerm]);
 
+  
   const indexOfLastNews = currentPage * newsPerPage;
   const indexOfFirstNews = indexOfLastNews - newsPerPage;
   const currentNews = news.slice(indexOfFirstNews, indexOfLastNews);
@@ -40,7 +43,7 @@ const News = () => {
 
   const handleSearchChange = (event) => {
     setSearchTerm(event.target.value);
-    setCurrentPage(1);
+    setCurrentPage(1);  
   };
 
   return (
@@ -59,7 +62,7 @@ const News = () => {
         <ul className='ulNews'>
           {currentNews.map((article, index) => (
             <li className='liNews' key={index}>
-              {article.urlToImage && <img src={article.urlToImage} alt={article.title} className="news-image" />}
+              {article.image && <img src={article.image} alt={article.title} className="news-image" />}
               <h2 className='h2News'>{article.title}</h2>
               <p className='pNews'>{article.description}</p>
               <a className='aNews' href={article.url} target="_blank" rel="noopener noreferrer">Leia mais</a>

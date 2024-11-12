@@ -1,13 +1,18 @@
-const fetchNews = async (query) => {
-  try {
-    const response = await axios.get(`https://newsapi.org/v2/everything?q=${query || "game"}&language=pt&apiKey=f2d374e5416d45ec82f5454d25f4d37c`);
-    console.log(response);
-    
-    if (response.data.articles.length === 0) {
-      console.log("Nenhuma notícia encontrada");
-    }
-    setNews(response.data.articles);
-  } catch (error) {
-    console.error("Erro ao buscar notícias:", error);
+import axios from "axios";
+
+// Substitua pela sua chave de API GNews
+const apiKey = "1eae427999e4849ceeac98b3e9a63468";
+
+const axiosNewsInstance = axios.create({
+  baseURL: 'https://gnews.io/api/v4',
+  headers: {
+    'Accept': 'application/json'
   }
+});
+
+const fetchNews = (query = "games") =>
+  axiosNewsInstance.get(`/search?q=${query}&lang=pt&token=${apiKey}`);  // Adicionamos o lang=pt
+
+export default {
+  fetchNews,
 };
