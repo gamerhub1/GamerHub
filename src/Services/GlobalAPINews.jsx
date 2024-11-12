@@ -1,6 +1,6 @@
 import axios from "axios";
 
-// Substitua pela sua chave de API GNews
+
 const apiKey = "1eae427999e4849ceeac98b3e9a63468";
 
 const axiosNewsInstance = axios.create({
@@ -11,7 +11,7 @@ const axiosNewsInstance = axios.create({
 });
 
 const fetchNews = (query = "games") =>
-  axiosNewsInstance.get(`/search?q=${query}&lang=pt&token=${apiKey}`);  // Adicionamos o lang=pt
+  axiosNewsInstance.get(`/search?q=${query}&lang=pt&token=${apiKey}`);  
 
 export default {
   fetchNews,
