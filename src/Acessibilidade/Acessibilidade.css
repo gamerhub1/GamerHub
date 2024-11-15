@@ -40,9 +40,9 @@
   }
   
   .jogo-itemacss {
-    background: linear-gradient(45deg, #4e4e4e, #000000, #4e4e4e);
+    background: linear-gradient(45deg, #383838, #000000, #383838);
     background-size: 400% 400%;
-    animation: gradientAnimation 6s ease infinite;
+    animation: gradientAnimation 10s ease infinite;
     border-radius: 12px;
     padding: 20px;
     border: 1px solid #fd0000;
