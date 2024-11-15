@@ -8,9 +8,20 @@ import NavBar from './Navbar/NavBar.tsx';
 import Catalogo from './Catalogo/Catalogo.jsx';
 import News from './News/News.jsx'; 
 import './App.css';
+import Acessibilidade from './Acessibilidade/Acessibilidade.jsx';
 
 
 const router = createBrowserRouter([
+  {
+  path: 'acessibilidade',
+  element: (
+    <>
+      <NavBar />
+      <Acessibilidade />
+    </>
+  ),
+},
+
   {
     path: '/',
     element: (
@@ -38,6 +49,8 @@ const router = createBrowserRouter([
       </>
     ),
   },
+
+  
 ]);
 
 createRoot(document.getElementById('root')).render(

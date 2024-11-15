@@ -5,10 +5,10 @@ import './News.css';
 const News = () => {
   const [news, setNews] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [searchTerm, setSearchTerm] = useState("games");  // Inicia com "games" como padrão
+  const [searchTerm, setSearchTerm] = useState("Games");  
   const newsPerPage = 6;
 
-  // Função para buscar as notícias com base no termo de pesquisa
+  
   const fetchNews = async (query) => {
     try {
       const response = await api.fetchNews(query);  
@@ -18,10 +18,10 @@ const News = () => {
     }
   };
 
-  // Busca inicial com "games" quando o componente for montado
+  
   useEffect(() => {
     fetchNews(searchTerm); 
-  }, []); // Executa apenas uma vez ao carregar o componente
+  }, []); 
 
   const indexOfLastNews = currentPage * newsPerPage;
   const indexOfFirstNews = indexOfLastNews - newsPerPage;
@@ -40,16 +40,14 @@ const News = () => {
     }
   };
 
-  // Atualiza o valor da pesquisa
   const handleSearchChange = (event) => {
     setSearchTerm(event.target.value);
-    setCurrentPage(1);  // Reseta para a página 1 ao mudar o texto
+    setCurrentPage(1);  
   };
 
-  // Realiza a busca quando pressionar Enter
   const handleSearchSubmit = (event) => {
     if (event.key === "Enter") {
-      fetchNews(searchTerm); // Chama a API apenas quando Enter for pressionado
+      fetchNews(searchTerm); 
     }
   };
 
@@ -60,7 +58,7 @@ const News = () => {
         placeholder="Pesquise um Jogo ou Empresa..."
         value={searchTerm}
         onChange={handleSearchChange}
-        onKeyDown={handleSearchSubmit}  // Dispara a pesquisa somente quando pressionar Enter
+        onKeyDown={handleSearchSubmit} 
         className="search-barNews"
       />
 

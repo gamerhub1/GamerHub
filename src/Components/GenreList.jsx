@@ -3,17 +3,17 @@ import GlobalAPI from "../Services/GlobalAPI";
 import "../Css/Generos.css";
 
 function GenreList({ genereId, selectedGenresName }) {
-  const [genreList, setGenreList] = useState([]);  // Lista de gêneros da API
-  const [activeIndex, setActiveIndex] = useState(null);  // Index ativo para destacar o gênero selecionado
+  const [genreList, setGenreList] = useState([]);  
+  const [activeIndex, setActiveIndex] = useState(null);  
 
   useEffect(() => {
-    getGenreList();  // Chama a função para buscar a lista de gêneros ao carregar o componente
+    getGenreList();  
   }, []);
 
-  // Função para buscar a lista de gêneros da API
+  
   const getGenreList = () => {
     GlobalAPI.getGenreList.then((resp) => {
-      setGenreList(resp.data.results);  // Armazena a lista de gêneros no estado
+      setGenreList(resp.data.results); 
     });
   };
 
@@ -23,11 +23,11 @@ function GenreList({ genereId, selectedGenresName }) {
       {genreList.map((item, index) => (
         <div
           key={item.id}
-          className={`iconlist ${activeIndex === index ? "active" : ""}`}  // Destaca o item ativo
+          className={`iconlist ${activeIndex === index ? "active" : ""}`}  
           onClick={() => {
-            setActiveIndex(index);  // Define o índice ativo para alterar a classe
-            genereId(item.id);  // Passa o ID do gênero selecionado para o componente pai (Catalogo)
-            selectedGenresName(item.name);  // Passa o nome do gênero para o componente pai
+            setActiveIndex(index);  
+            genereId(item.id);  
+            selectedGenresName(item.name);  
           }}
         >
           <img className="icongenre" src={item.image_background} alt={item.name} />

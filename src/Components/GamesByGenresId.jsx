@@ -8,7 +8,7 @@ function GamesByGenresId({ genreId }) {
   const [totalPages, setTotalPages] = useState(0);
   const itemsPerPage = 12;
 
-  // Cache para armazenar resultados de jogos
+
   const cache = useMemo(() => ({}), []);
 
   const fetchGames = async (page) => {
@@ -22,7 +22,7 @@ function GamesByGenresId({ genreId }) {
       setGameList(response.data.results);
       setTotalPages(Math.ceil(response.data.count / itemsPerPage));
 
-      // Armazena no cache
+      
       cache[`${genreId}-${page}`] = response.data.results;
     } catch (error) {
       console.error("Error fetching games:", error);

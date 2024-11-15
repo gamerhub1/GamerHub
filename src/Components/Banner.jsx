@@ -18,7 +18,7 @@ function Banner({ gameBanner }) {
                 "https://store.steampowered.com/app/271590/Grand_Theft_Auto_V/?l=portuguese"
             }
           >
-            Get Now
+            Obter Agora!
           </button>
         </div>
         <img

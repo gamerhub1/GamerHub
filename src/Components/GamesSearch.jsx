@@ -5,21 +5,21 @@ const GamesSearch = ({ games }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const gamesPerPage = 20;
 
-  // Cálculo para paginar os jogos
+
   const indexOfLastGame = currentPage * gamesPerPage;
   const indexOfFirstGame = indexOfLastGame - gamesPerPage;
   const currentGames = games.slice(indexOfFirstGame, indexOfLastGame);
 
   const totalPages = Math.ceil(games.length / gamesPerPage);
 
-  // Função para ir para a próxima página
+
   const handleNextPage = () => {
     if (currentPage < totalPages) {
       setCurrentPage(currentPage + 1);
     }
   };
 
-  // Função para ir para a página anterior
+ 
   const handlePreviousPage = () => {
     if (currentPage > 1) {
       setCurrentPage(currentPage - 1);
@@ -44,7 +44,7 @@ const GamesSearch = ({ games }) => {
         ))}
       </div>
 
-      {/* Botões de navegação */}
+      
       <div className="pagination-buttons">
         <button onClick={handlePreviousPage} disabled={currentPage === 1}>
           Anterior
