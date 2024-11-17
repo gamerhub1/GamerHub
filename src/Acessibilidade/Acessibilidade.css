@@ -116,7 +116,7 @@
   }
 
   .jogo-itemacss {
-      width: calc(100% - 20px); /* Para telas menores, ocupa toda a largura disponível */
+      width: calc(100% - 20px); 
   }
 
   .jogo-itemacss h2 {

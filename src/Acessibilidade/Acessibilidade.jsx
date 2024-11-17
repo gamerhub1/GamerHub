@@ -9,7 +9,7 @@ const Acessibilidade = () => {
       descricao: 'The Last of Us Part II oferece um dos pacotes de acessibilidade mais completos, incluindo uma gama de opções para deficientes visuais e auditivos. O jogo possui controles altamente customizáveis, permitindo que jogadores ajustem a sensibilidade e a ação dos botões. Para deficientes visuais, oferece opções como modo de alto contraste, além de narração das falas dos personagens e descrição de ambientes. Já para deficientes auditivos, o jogo conta com legendas detalhadas, inclusive com descrição de sons e música, facilitando a navegação no mundo do jogo.',
       trailer: 'https://www.youtube.com/embed/W2Wnvvj33Wo',
       imagem: 'https://wallpapercave.com/wp/wp10887411.jpg',
-      steamLink: 'https://store.steampowered.com/app/18893/The_Last_of_Us_Part_II/',
+      steamLink: 'https://store.playstation.com/pt-br/concept/230079',
     },
     {
       nome: 'Forza Horizon 5',
@@ -30,7 +30,7 @@ const Acessibilidade = () => {
       descricao: 'Minecraft é um dos jogos mais inclusivos quando se trata de acessibilidade. Ele oferece uma ampla gama de opções, como a possibilidade de ativar narração do jogo, além de ajustes no contraste e tamanhos de texto. Jogadores com deficiências visuais podem utilizar a função de narração para descrever o ambiente, itens e interações. Para jogadores com deficiência auditiva, o jogo inclui legendas e a opção de indicar visualmente certos sons, como o movimento de criaturas ou a quebra de blocos. Além disso, Minecraft tem uma vasta comunidade de mods que oferecem ainda mais opções de acessibilidade.',
       trailer: 'https://www.youtube.com/embed/MmB9b5njVbA',
       imagem: 'https://wallpapercave.com/uwp/uwp4417718.jpeg',
-      steamLink: 'https://store.steampowered.com/app/91310/Minecraft/',
+      steamLink: 'https://www.minecraft.net/pt-br',
     },
     {
       nome: 'Sea of Thieves',
@@ -58,28 +58,28 @@ const Acessibilidade = () => {
       descricao: 'Spider-Man: Miles Morales oferece uma série de opções para tornar o jogo acessível a todos, incluindo legendas detalhadas e a opção de aumentar o tamanho do texto. O jogo também oferece controles personalizados para acomodar jogadores com deficiência motora e opções de contraste de cores para melhorar a legibilidade. Para deficientes auditivos, o jogo inclui indicações visuais dos sons ao redor do personagem, como ataques e movimentos dos inimigos.',
       trailer: 'https://www.youtube.com/embed/qjRzm9A7DU4',
       imagem: 'https://wallpapercave.com/wp/wp7150802.png',
-      steamLink: 'https://store.steampowered.com/app/1434190/Marvels_Spiderman_Miles_Morales/',
+      steamLink: 'https://store.steampowered.com/app/1817190/Marvels_SpiderMan_Miles_Morales/',
     },
     {
       nome: 'Uncharted: The Lost Legacy',
       descricao: 'Uncharted: The Lost Legacy oferece uma série de opções de acessibilidade, incluindo legendas ajustáveis, descrição de sons e ajustes de contraste. Para deficientes auditivos, o jogo proporciona legendas com informações adicionais sobre o ambiente sonoro. Já para deficientes visuais, oferece modos de alto contraste e a opção de narração para descrever as ações e os cenários.',
       trailer: 'https://www.youtube.com/embed/i8qzBkHjk_0',
       imagem: 'https://wallpapercave.com/wp/wp2101616.jpg',
-      steamLink: 'https://store.steampowered.com/app/931750/Uncharted_The_Lost_Legacy/',
+      steamLink: 'https://store.steampowered.com/app/1659420/UNCHARTED_Coleo_Legado_dos_Ladres/',
     },
     {
       nome: 'Ratchet & Clank: Rift Apart',
       descricao: 'Ratchet & Clank: Rift Apart é um excelente exemplo de como um jogo de ação pode ser acessível. Ele oferece ajustes de controle para deficientes motores e modos de contraste para ajudar deficientes visuais. Além disso, as legendas são altamente personalizáveis, permitindo alterar o tamanho e o estilo da fonte. O jogo também oferece uma função de narração para descrever elementos importantes durante o jogo.',
       trailer: 'https://www.youtube.com/embed/ai3o0XtrnM8',
       imagem: 'https://wallpapercave.com/wp/wp11726396.jpg',
-      steamLink: 'https://store.steampowered.com/app/1575380/Ratchet_and_Clank_Rift_Apart/',
+      steamLink: 'https://store.steampowered.com/app/1895880/Ratchet__Clank_Em_Uma_Outra_Dimenso/',
     },
     {
       nome: 'Watch Dogs: Legion',
       descricao: 'Watch Dogs: Legion oferece diversas opções de acessibilidade, incluindo legendas e indicações visuais para jogadores com deficiência auditiva. O jogo também permite ajustes no contraste, além de opções de controle para jogadores com dificuldades motoras. O título oferece uma excelente flexibilidade de personalização para que todos os jogadores possam se adaptar às suas necessidades.',
       trailer: 'https://www.youtube.com/embed/srXrGKGAU20',
       imagem: 'https://wallpapercave.com/wp/wp5444511.jpg',
-      steamLink: 'https://store.steampowered.com/app/927110/Watch_Dogs_Legion/',
+      steamLink: 'https://store.steampowered.com/app/2239550/Watch_Dogs_Legion/',
     },
     {
       nome: 'Resident Evil Village',
@@ -142,7 +142,7 @@ const Acessibilidade = () => {
         descricao: 'Hitman 3 oferece várias opções de acessibilidade, como legendas ajustáveis, narração de falas e ajustes de contraste para deficientes visuais. Para jogadores com deficiência auditiva, o título inclui a descrição de sons importantes e a personalização das configurações de áudio. O jogo também permite a personalização dos controles para facilitar a jogabilidade para jogadores com dificuldades motoras.',
         trailer: 'https://www.youtube.com/embed/R_Ob-fupzKg',
         imagem: 'https://wallpapercave.com/wp/wp6987580.png',
-        steamLink: 'https://store.steampowered.com/app/1121640/Hitman_3/',
+        steamLink: 'https://store.steampowered.com/agecheck/app/1659040/?curator_clanid=34140237',
       },
       {
         nome: 'Bioshock Infinite',
@@ -163,7 +163,7 @@ const Acessibilidade = () => {
         descricao: 'The Quarry inclui recursos de acessibilidade abrangentes, como o "modo filme", que permite assistir à narrativa sem interações complexas. O jogo oferece legendas customizáveis, com ajustes de tamanho e cor, e opções para reduzir efeitos visuais intensos. Para deficientes auditivos, há legendas detalhadas e narração de menus. Além disso, ajustes de tempo para os QTEs facilitam a interação para jogadores com dificuldades motoras.',
         trailer: 'https://www.youtube.com/embed/Zh2K7SxRHmo',
         imagem: 'https://wallpapercave.com/wp/wp11245702.jpg',
-        steamLink: 'https://store.steampowered.com/app/1716740/The_Quarry/',
+        steamLink: 'https://store.steampowered.com/agecheck/app/1577120/',
       },
       {
         nome: 'Psychonauts 2',
@@ -177,14 +177,14 @@ const Acessibilidade = () => {
           descricao: "FIFA 23 oferece uma série de opções de acessibilidade, permitindo aos jogadores personalizar os controles e ajustes visuais para uma experiência mais inclusiva. O jogo se adapta a diversas necessidades, desde ajustes de velocidade e controles até melhorar a visibilidade durante as partidas.",
           trailer: "https://www.youtube.com/embed/GvXbIAuIEq0", 
           imagem: "https://wallpapercave.com/wp/wp11851062.jpg", 
-          steamLink: "https://store.steampowered.com/app/1574010/FIFA_23/" 
+          steamLink: "https://store.steampowered.com/app/1811260/EA_SPORTS_FIFA_23/" 
         },
         {
           nome: "Assassin's Creed Valhalla",
           descricao: "Assassin's Creed Valhalla é um jogo de ação e aventura de mundo aberto com forte foco na imersão e narrativa. Ele oferece várias opções de acessibilidade, incluindo ajustes de visibilidade e audição, tornando o jogo mais acessível para um público diversificado.",
           trailer: "https://www.youtube.com/embed/RWmKQJI_X8I", 
           imagem: "https://wallpapercave.com/wp/wp9162199.jpg", 
-          steamLink: "https://store.steampowered.com/app/881100/Assassins_Creed_Valhalla/" 
+          steamLink: "https://store.steampowered.com/agecheck/app/2208920/" 
         }
         
 
