@@ -11,6 +11,7 @@ import './App.css';
 import Acessibilidade from './Acessibilidade/Acessibilidade.jsx';
 
 
+
 const router = createBrowserRouter([
   {
   path: 'acessibilidade',
@@ -49,8 +50,6 @@ const router = createBrowserRouter([
       </>
     ),
   },
-
-  
 ]);
 
 createRoot(document.getElementById('root')).render(

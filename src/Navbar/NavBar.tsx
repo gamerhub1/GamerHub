@@ -21,7 +21,6 @@ export default function NavBar() {
           <li><a href="catalogo">Catálogo</a></li>
           <li><a href="News">Notícias</a></li>
           <li><a href="Acessibilidade">Acessibilidade</a></li>
-          <li><a href="Sobre">Sobre</a></li>
         </ul>
       </nav>
     </header>
